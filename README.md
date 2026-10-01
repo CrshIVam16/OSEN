@@ -23,10 +23,6 @@ The community link targets `CrshIVam16/OSEN` and its `q-a` Discussions category.
 
 Until Discussions are enabled and configured, the community link will not work.
 
-## Deploy on GitHub Pages
-
-The workflow in `.github/workflows/pages.yml` publishes the site from the repository root when changes are pushed to `main`. In repository settings, choose **Pages → Build and deployment → GitHub Actions**. GitHub Pages serves the static HTML, CSS, and JavaScript; no secrets or server are needed.
-
 ## AI and data storage
 
 This first version is intentionally frontend-only. Its suggestions are curated troubleshooting checks, not AI-generated diagnoses. To add AI safely, use a backend or serverless function to protect provider credentials, explain what data is sent, and handle abuse and cost limits. To keep submitted questions on the site itself, add a backend/database; GitHub Discussions is the hosted community destination for this version.
