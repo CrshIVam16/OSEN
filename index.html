@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f2">
+    <meta name="description" content="A practical debugging guide for developers at every level. Get unstuck, then ask the community with a clear question.">
+    <title>DevSOS — Find your next debugging step</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="DevSOS home">
+        <span class="brand-mark" aria-hidden="true">D<span>.</span></span>
+        <span>dev<span class="brand-light">SOS</span></span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a class="nav-community" href="https://github.com/CrshIVam16/OSEN/discussions/new?category=q-a" target="_blank" rel="noreferrer">Community <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> YOUR FRIENDLY DEBUGGING SIDEKICK</p>
+          <h1>Stuck on a bug?<br>Let's <span class="highlight">untangle it.</span></h1>
+          <p class="hero-description">Every developer gets stuck. Describe what's going wrong and get a useful next step—no judgment, no jargon wall.</p>
+          <div class="hero-note"><span aria-hidden="true">✳</span> For your first bug and your thousandth.</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="art-spark spark-one">✳</div>
+          <div class="art-spark spark-two">+</div>
+          <div class="terminal-card">
+            <div class="terminal-top"><span></span><span></span><span></span><i>debugging.js</i></div>
+            <div class="terminal-content">
+              <p><span class="code-purple">const</span> bug = <span class="code-peach">"found"</span>;</p>
+              <p><span class="code-purple">while</span> (bug) {</p>
+              <p class="indent"><span class="code-green">breathe</span>();</p>
+              <p class="indent"><span class="code-green">debug</span>();</p>
+              <p>}</p>
+              <div class="terminal-success"><span>✓</span> one step at a time</div>
+            </div>
+          </div>
+          <div class="art-badge"><span>●</span> YOU'VE GOT THIS</div>
+        </div>
+      </section>
+
+      <section class="debugger-section" id="debugger">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 — LET'S FIGURE IT OUT</p>
+            <h2>What are you wrestling with?</h2>
+          </div>
+          <span class="step-label">TAKES ABOUT 30 SECONDS</span>
+        </div>
+
+        <div class="debugger-card">
+          <form id="debug-form">
+            <label for="problem">Describe the problem or paste the error</label>
+            <p class="field-hint">The more context, the better. You can remove private details first.</p>
+            <textarea id="problem" name="problem" rows="5" placeholder="e.g. My React app shows 'Cannot read properties of undefined' when I load the profile page..." required></textarea>
+            <div class="form-row">
+              <div class="select-wrap">
+                <label for="category">What area is it in?</label>
+                <select id="category" name="category">
+                  <option value="auto">Help me figure that out</option>
+                  <option value="javascript">JavaScript / TypeScript</option>
+                  <option value="git">Git / GitHub</option>
+                  <option value="build">Builds / tests / dependencies</option>
+                  <option value="api">APIs / networking</option>
+                  <option value="frontend">HTML / CSS / UI</option>
+                  <option value="deploy">Deployment / environment</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+              <button class="button button-primary" type="submit">Find my next step <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+        </div>
+
+        <section class="results-panel" id="results" aria-live="polite" hidden>
+          <div class="results-top">
+            <div>
+              <p class="eyebrow">YOUR DEBUGGING GAME PLAN</p>
+              <h2 id="result-title">Let's take this one step at a time.</h2>
+            </div>
+            <button class="icon-button" id="reset-button" type="button" aria-label="Start over" title="Start over">↺</button>
+          </div>
+          <p class="result-intro" id="result-intro"></p>
+          <ol class="steps-list" id="steps-list"></ol>
+          <div class="result-bottom">
+            <p>Still stuck? That's what the community is for.</p>
+            <button class="button button-dark" id="community-button" type="button">Prepare a help request <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="help-draft" id="help-draft" hidden>
+            <label for="help-request">Copy this formatted request into your discussion</label>
+            <textarea id="help-request" rows="12" readonly></textarea>
+            <button class="button button-primary" id="select-draft-button" type="button">Select draft to copy <span aria-hidden="true">⌘</span></button>
+          </div>
+          <p class="privacy-note">Your description stays in this browser unless you choose to copy or share it.</p>
+        </section>
+      </section>
+
+      <section class="how-section" id="how-it-works">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 — BUILT FOR REAL-LIFE BLOCKERS</p>
+            <h2>Less panic. More progress.</h2>
+          </div>
+          <p class="section-blurb">A small nudge can turn “I'm stuck” into “I know what to try next.”</p>
+        </div>
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="value-icon icon-yellow" aria-hidden="true">⌘</span>
+            <p class="card-index">01 / GET UNSTUCK</p>
+            <h3>Start with a next step</h3>
+            <p>Practical checks for common JavaScript, Git, API, UI, test, and deployment problems. No magic fixes—just a good place to start.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon icon-lilac" aria-hidden="true">↗</span>
+            <p class="card-index">02 / ASK BETTER</p>
+            <h3>Make the hard ask easier</h3>
+            <p>Turn your notes into a clear, reproducible question so other developers can understand the issue and help faster.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-icon icon-mint" aria-hidden="true">♡</span>
+            <p class="card-index">03 / NO GATEKEEPING</p>
+            <h3>Every level belongs</h3>
+            <p>New to coding or deep in production? Debugging is a team sport. Ask clearly, share kindly, and keep learning together.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing-cta">
+        <div>
+          <p class="eyebrow">THE BUG ISN'T A YOU PROBLEM</p>
+          <h2>Let's solve it together.</h2>
+        </div>
+        <a class="button button-primary" href="#debugger">Try the debugging guide <span aria-hidden="true">↑</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">D<span>.</span></span><span>dev<span class="brand-light">SOS</span></span></a>
+      <p>A community-minded debugging guide. Made for developers, by developers.</p>
+      <span class="footer-tag">DEBUG WITH KINDNESS <span aria-hidden="true">✳</span></span>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
