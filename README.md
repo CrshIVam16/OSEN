@@ -5,6 +5,7 @@ DevSOS is a small, static debugging guide for developers at every experience lev
 ## Run locally
 
 Open `index.html` in a browser, or serve the repository root with any static file server. There is no build step, dependency install, backend, or API key.
+- [live-link](https://osen-github.netlify.app/)
 
 ## How it works
 
